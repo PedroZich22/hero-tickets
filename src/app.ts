@@ -16,7 +16,7 @@ class App {
 	}
 
 	initializeRoutes() {
-		this.app.use("./events", this.eventRoutes.router);
+		this.app.use("/events", this.eventRoutes.router);
 	}
 
 	interceptionError() {

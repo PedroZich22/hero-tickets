@@ -7,7 +7,7 @@ class EventController {
 	async create(request: Request, response: Response, next: NextFunction) {
 		const eventData = request.body;
 		try {
-			const createEvent = await this.eventUseCase.create(eventData);
+			await this.eventUseCase.create(eventData);
 			return response
 				.status(201)
 				.json({ message: "Evento criado com sucesso." });
