@@ -5,9 +5,7 @@ export async function connect() {
 		await mongoose.connect(
 			"mongodb+srv://Zich:pedrozich@cluster0.vzbh9zq.mongodb.net/hero-tickets"
 		);
-
-		console.log("Connect database success");
 	} catch (error) {
-		console.error(error);
+		console.log("🚀 ~ file: database.ts:5 ~ connect ~ error:", error);
 	}
 }
