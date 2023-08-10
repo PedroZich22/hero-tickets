@@ -9,11 +9,12 @@ describe("Event test", () => {
 		const event = {
 			title: "Jorge e Mateus",
 			price: [{ sector: "Pista", amount: "20" }],
+			categories: ["Show"],
 			description: "Evento descrição",
 			city: "Belo Horizonte",
 			location: {
-				latitude: "-19.8658619",
-				longitude: "-43.9737064",
+				latitude: "-19.8658618",
+				longitude: "-43.9737063",
 			},
 			coupons: [],
 			date: new Date(),
@@ -26,15 +27,18 @@ describe("Event test", () => {
 			.field("description", event.description)
 			.field("city", event.city)
 			.field("coupons", event.coupons)
+			.field("categories", event.categories)
 			.field("location[latitude]", event.location.latitude)
 			.field("location[longitude]", event.location.longitude)
+			.field("date", event.date.toISOString())
 			.field("price[sector]", event.price[0].sector)
 			.field("price[amount]", event.price[0].amount)
 			.attach("banner", "/Users/pedro/Downloads/banner.png")
 			.attach("flyers", "/Users/pedro/Downloads/flyer1.png")
 			.attach("flyers", "/Users/pedro/Downloads/flyer2.png");
+
 		if (response.error) {
-			console.log("error:", response.error);
+			console.log("🚀 ~ file: Events.test.ts:34 ~ it ~ error:", response.error);
 		}
 
 		expect(response.status).toBe(201);
