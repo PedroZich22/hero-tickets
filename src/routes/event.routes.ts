@@ -36,7 +36,15 @@ class EventRoutes {
 			this.eventController.findEventByLocation.bind(this.eventController)
 		);
 		this.router.get(
+			"/:id",
+			this.eventController.findEventById.bind(this.eventController)
+		);
+		this.router.get(
 			"/category/:category",
+			this.eventController.findEventsByCategory.bind(this.eventController)
+		);
+		this.router.post(
+			"/:id/participants",
 			this.eventController.findEventsByCategory.bind(this.eventController)
 		);
 	}
